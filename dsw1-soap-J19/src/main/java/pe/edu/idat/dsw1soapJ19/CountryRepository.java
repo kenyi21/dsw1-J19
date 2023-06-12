@@ -17,6 +17,7 @@ public class CountryRepository {
 
 	@PostConstruct
 	public void initData() {
+
 		Country spain = new Country();
 		spain.setName("Spain");
 		spain.setCapital("Madrid");
@@ -32,15 +33,26 @@ public class CountryRepository {
 		poland.setPopulation(38186860);
 
 		countries.put(poland.getName(), poland);
-
+		
 		Country uk = new Country();
 		uk.setName("United Kingdom");
 		uk.setCapital("London");
 		uk.setCurrency(Currency.GBP);
 		uk.setPopulation(63705000);
+		
 
 		countries.put(uk.getName(), uk);
+
+		Country pe = new Country();
+		pe.setName("Peru");
+		pe.setCapital("Lima");
+		pe.setCurrency(Currency.PEN);
+		pe.setPopulation(333330);
+		
+
+		countries.put(pe.getName(), pe);
 	}
+
 
 	public Country findCountry(String name) {
 		Assert.notNull(name, "The country's name must not be null");
